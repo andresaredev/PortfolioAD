@@ -7,3 +7,4 @@ class Contacto(models.Model):
     email = models.CharField(max_length=90)
     phone = models.CharField(max_length=90)
     message = models.CharField( max_length=2000 )
+
