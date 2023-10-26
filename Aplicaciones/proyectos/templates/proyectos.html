@@ -20,14 +20,14 @@
                     
                         <!-- Project Card -->
                         <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                            <div class="card-body p-0">
+                            <div class="card-body p-0 d-flex">
                                 <div class="d-flex align-items-center">
-                                    <div class="p-5">
+                                    <div class="p-5 flex-grow-1">
                                         <p>{{p.date}}</p>
                                         <h2 class="fw-bolder">{{p.nombre}}</h2>
                                         <p>{{p.descripcion}}</p>
                                     </div>
-                                    <img class="img-fluid" src="{{p.imageproj.url}}" alt="..." />
+                                    <img class="img-fluid " src="{{p.imageproj.url}}" alt="..." style="width: 300px; height: auto; max-width: 130%;"/>
                                 </div>
                             </div>
                         </div>
