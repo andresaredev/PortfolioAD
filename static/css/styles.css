@@ -11,7 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #ededf4;
+  --bs-blue: #1e30f3;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #e21e80;
@@ -35,13 +35,15 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #1e30f3;
-  --bs-secondary: #e21e80;
+  --bs-secondary: #e21e80;  
+  --bs-main: #1f242d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
+  --bs-light: #1f242d;
+  --bs-dark: #1f242d;
+  --bd-personal:#00abf0;
   --bs-primary-rgb: 30, 48, 243;
   --bs-secondary-rgb: 226, 30, 128;
   --bs-success-rgb: 25, 135, 84;
@@ -62,7 +64,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #1f242d;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -79,10 +81,48 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+.ml{
+  margin-left: 30px !important;
+}
+
+.mainname{
+  animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideRight {
+
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+}
+
+.effectmain{ 
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 7s;
+
+}
+
+
+.btnindex{
+  border-radius: 15px !important;
+  background-color: #081b29;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.boxshadow {
+  box-shadow: 0 -8px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -92,7 +132,7 @@
 }
 
 body {
-  background-color: red;
+  background-color: rgb(241, 231, 231);
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -11556,14 +11596,21 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: #081b29;
+  background: linear-gradient(135deg, #081b29 0%, #00abf0 100%);
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+  background: -webkit-linear-gradient(90deg, #081b29 -1%, #00abf0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient{
+  background: #081b29;
+  background: linear-gradient(135deg,#081b29 0%, #081b29 0%, #00abf0  100%);
+  border-radius: 90px;
+
 }
 
 .rounded-4 {

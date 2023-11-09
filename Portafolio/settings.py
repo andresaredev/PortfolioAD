@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Aplicaciones.proyectos',
     'Aplicaciones.contacto',
+    'Aplicaciones.ubicacion',
+    'Aplicaciones.chatbot',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,7 @@ EMAIL_USE_TLS = True  # O False si no estás utilizando TLS
 EMAIL_HOST_USER = 'andresfelipearevalo12345@gmail.com'
 EMAIL_HOST_PASSWORD = 'zwpm jsfr lhok sari'
 DEFAULT_FROM_EMAIL = 'andresfelipearevalo12345@gmail.com'
+
+LOGIN_REDIRECT_URL = 'Inicio'
+LOGOUT_REDIRECT_URL = 'Inicio'
+

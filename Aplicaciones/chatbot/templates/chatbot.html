@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %} 
+{% load static %} 
+{% block title %}Chatbot {% endblock %} 
+{% block content %}
+
+<div id="chat-container">
+  <div id="chat-box">
+    <!-- Mensajes del chat se agregarán aquí -->
+  </div>
+  <div id="user-input-container">
+    <input type="text" id="user_input" placeholder="Escribe tu pregunta..." />
+    <button onclick="sendUserInput()">Enviar</button>
+  </div>
+</div>
+
+<!-- ... (Código anterior) ... -->
+
+<script>
+  function sendUserInput() {
+    var userInput = document.getElementById("user_input").value;
+
+    // Validar la entrada del usuario
+    if (!userInput.trim()) {
+      alert("Por favor, ingresa una pregunta.");
+      return;
+    }
+
+    // Realizar la solicitud AJAX a la vista del chatbot
+    $.post("{% url 'chatbot' %}", { user_input: userInput }, function (data) {
+      // Crear elementos de mensaje del usuario y del bot
+      var userMessage = "<div class='message user-message'> Tú: " + userInput + "</div>";
+      var botResponse = "<div class='message bot-response'> Bot: " + data.response + "</div>";
+
+      // Agregar mensajes al chat-box
+      $("#chat-box").append(userMessage);
+      $("#chat-box").append(botResponse);
+    })
+      .fail(function () {
+        // Manejar errores de la solicitud AJAX
+        alert("Hubo un error al procesar tu solicitud.");
+      })
+      .done(function () {
+        // Limpiar la entrada del usuario después de que se completa la solicitud
+        document.getElementById("user_input").value = "";
+      });
+  }
+</script>
+
+<!-- Agrega la librería jQuery para facilitar la realización de solicitudes AJAX -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Incluye tu archivo CSS -->
+<link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+
+{% endblock %}
